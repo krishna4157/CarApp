@@ -1,0 +1,76 @@
+#JSGF V1.0;
+
+grammar menu;
+
+<adjective> = what | when | why | latest | new | between | BETWEEN | tell | and | AND | from | to;
+
+
+
+
+<india_place> = Andhra_Pradesh |
+                     Arunachal_Pradesh |
+                     Assam |
+                     Bihar |
+                     Chhattisgarh |
+                     Goa |
+                     Gujarat |
+                     Haryana |
+                     Himachal_Pradesh |
+                     Jharkhand |
+                     Karnataka |
+                     Kerala |
+                     Madhya_Pradesh |
+                     Maharashtra |
+                     Manipur |
+                     Meghalaya |
+                     Mizoram |
+                     Nagaland |
+                     Odisha |
+                     Punjab |
+                     Rajasthan |
+                     Sikkim |
+                     Tamil_Nadu |
+                     Telangana |
+                     Tripura |
+                     Uttar_Pradesh |
+                     Uttarakhand |
+                     West_Bengal |
+                     Andaman_and_Nicobar_Islands |
+                     Chandigarh |
+                     Dadra_and_Nagar_Haveli_and_Daman_and_Diu |
+                     Delhi |
+                     Jammu_and_Kashmir |
+                     Ladakh |
+                     Lakshadweep |
+                     Puducherry;
+
+<location> =
+          Visakhapatnam | Vizianagaram | Vijayawada | Guntur | Tirupati |
+          Kakinada | Rajahmundry | Nellore | Kurnool | Anantapur |
+          Kadapa | Ongole | Chittoor | Srikakulam |
+          Machilipatnam | Tadepalligudem | Bhimavaram | Tenali | Proddatur |
+          Hindupur | Chilakaluripet | Dharmavaram | Guntakal | Kavali |
+          Narasaraopet | Madanapalle | Amalapuram | Bapatla |
+          Hyderabad | Warangal | Nizamabad | Karimnagar | Khammam |
+          Ramagundam | Mahabubnagar | Adilabad | Suryapet | Siddipet |
+          Nalgonda | Miryalaguda | Jagtial | Sangareddy | Kamareddy |
+          Medak | Nirmal | Mancherial | Wanaparthy | Jangaon |
+          Koratla | Sircilla | Mahabubabad | Bhongir |
+          Gadwal | Nagarkurnool | Asifabad | Vikarabad;
+
+<word> = location  |
+          distance from |
+          latest news   |
+          today |
+          news |
+          cancel |
+          tell me a joke |
+          movies |
+          hello |
+          score |
+          cricket |
+          to |
+          what is the time now;
+
+public <item> = india | (<india_place>)+ | (<location>)+ | (<word>)+;
+

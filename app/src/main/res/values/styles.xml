@@ -1,0 +1,120 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/toolbarTitle</item>
+    </style>
+
+    <style name="AppTheme.PopUp">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="serverDetails" >
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="serverName">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/serverName</item>
+    </style>
+
+    <style name="serverList" >
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="infoServersList" >
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/infoServersList</item>
+    </style>
+
+    <style name="buttons" >
+        <item name="android:background">@drawable/button_bg</item>
+        <item name="android:textColor">@color/buttonText</item>
+    </style>
+
+    <style name="buttonsPopUp" >
+        <item name="android:background">@drawable/button_bg</item>
+        <item name="android:textColor">@color/buttonText</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:minHeight">35dp</item>
+        <item name="android:width">250dp</item>
+    </style>
+
+    <style name="Theme.ClinkCameraDemo" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+<!--        <item name="colorPrimary">@color/purple_500</item>-->
+<!--        <item name="colorPrimaryVariant">@color/purple_700</item>-->
+<!--        <item name="colorOnPrimary">@color/white</item>-->
+        <!-- Secondary brand color. -->
+<!--        <item name="colorSecondary">@color/teal_200</item>-->
+<!--        <item name="colorSecondaryVariant">@color/teal_700</item>-->
+<!--        <item name="colorOnSecondary">@color/black</item>-->
+        <!-- Status bar color. -->
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.ClinkCameraDemo.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.ClinkCameraDemo.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ClinkCameraDemo.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Camera2TopButtonStyle">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="Camera2MoreSettingsTextStyle">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Camera2MoreSettingsImageStyle">
+        <item name="android:layout_width">38dp</item>
+        <item name="android:layout_height">38dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="SplashActivityStyle" parent="Theme.AppCompat.NoActionBar">
+        <!-- The form background color is transparent -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- The form has no border -->
+        <item name="android:windowFrame">@null</item>
+        <!-- The form does not contain a title bar -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- Window suspension -->
+        <item name="android:windowIsFloating">false</item>
+        <!-- Remove redundant shadows when customizing TitleBar-->
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- Do not allow form background to be dimmed -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!-- Disable the preview animation of the window -->
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowNoDisplay">false</item>
+    </style>
+
+    <style name="camera2_anim_down_to_top" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+</resources>

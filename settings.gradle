@@ -1,0 +1,30 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        gradlePluginPortal()
+        jcenter()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        gradlePluginPortal()
+        jcenter()
+        maven { url 'https://raw.github.com/saki4510t/libcommon/master/repository/' }
+        maven {
+            url 'https://mvnrepository.com/artifact/com.alphacephei/vosk-android'
+        }
+    }
+
+}
+
+
+include ':app',  ':models', ':aars'
+//include ':libausbc'
+//include ':libuvc'
+//include ':libnative'

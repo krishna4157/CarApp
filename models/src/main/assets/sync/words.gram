@@ -1,0 +1,9 @@
+grammar words;
+
+<word> = location  |
+          distance |
+          news   |
+          joke |
+          movies;
+
+public <words> = <word>+;

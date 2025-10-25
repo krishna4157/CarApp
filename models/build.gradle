@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+    }
+
+    sourceSets {
+        main {
+            // Point to your assets directory
+            assets.srcDirs = ['src/main/assets']
+        }
+    }
+
+}
+
+
+
+// Configuration properties
+ext {
+    assetsDir = file('src/main/assets/sync')
+    assetsListName = 'assets.lst'
+    assetsHashType = 'md5'
+    assetsCtlFiles = ["**/*.${assetsHashType}", assetsListName]
+}
+
+// Clean assets control files
+task clean_assets(type: Delete) {
+    delete fileTree(assetsDir) {
+        include assetsCtlFiles
+    }
+}
+
+// Generate asset list
+task list {
+    doLast {
+        def listFile = new File(assetsDir, assetsListName)
+        listFile.withWriter { writer ->
+            fileTree(assetsDir).exclude(assetsCtlFiles).visit { fileDetails ->
+                if (!fileDetails.isDirectory()) {
+                    writer.println(fileDetails.relativePath.toString().replace('\\', '/'))
+                }
+            }
+        }
+        println "Asset list generated: ${listFile.path}"
+    }
+}
+
+// Generate checksums
+task checksum {
+    doLast {
+        fileTree(assetsDir).exclude(assetsCtlFiles).each { file ->
+            if (file.isFile()) {
+                def hashFile = new File(file.parent, "${file.name}.${assetsHashType}")
+                def hash = calculateHash(file, assetsHashType)
+                hashFile.text = hash
+            }
+        }
+        println "Checksums generated for assets in ${assetsDir}"
+    }
+}
+
+// Helper method to calculate hash
+def calculateHash(File file, String algorithm) {
+    def digest = java.security.MessageDigest.getInstance(algorithm.toUpperCase())
+    file.withInputStream { is ->
+        digest.update(is.bytes)
+    }
+    return digest.digest().encodeHex().toString()
+}
+
+// Set up task dependencies
+preBuild.dependsOn list, checksum
+clean.dependsOn clean_assets
